@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+header {
+    background: rgb(7, 234, 71);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed;
+    width: 100%; */
+}
+
+header h1 a{
+    color: white;
+}
+
+header nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+header nav ul li a{
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover{
+    color: blue;
+}
+
+
+
+article{
+    padding: 50px 0;
+    margin-bottom: 10px;
+}
+
+
+article#introduction{
+    display: flex;
+    align-items: top;
+    flex-wrap: wrap;
+}
+
+.column.left{
+    flex-basis: 70%;
+    padding-right: 50px;
+    text-align: justify;
+}
+
+article h2{
+    margin-bottom: 20px;
+}
+
+.column.right{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#introduction aside img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.aqua{
+    background-color: lightgray;
+}
+
+article#skills ul li{
+    list-style-type: none;
+}
+
+article#experience ul li .company{
+    font-size: 20px;
+    font-weight: 600;
+}
+article#experience ul li .year{
+    font-style: italic;
+}
+
+footer{
+    background-color: rgb(7, 234, 71);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.max-width{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+@media screen and (max-width: 900px) {
+    .column.left{
+        flex-basis: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .column.right{
+        flex-basis: 100%;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    header{
+        display: block;
+    }
+    .max-width{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+  }
+
