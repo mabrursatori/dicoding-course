@@ -29,14 +29,14 @@ const updateStorage = () => {
 
 const checkStorage = id => {
     books.forEach(book => {
-        if(book.id === id) book.isReaded = true;
+        if(book.id === id) book.isCompleted = true;
     });
     updateStorage();
 }
 
 const undoStorage = id => {
     books.forEach(book => {
-        if(book.id === id) book.isReaded = false;
+        if(book.id === id) book.isCompleted = false;
     });
     updateStorage();
 }
@@ -61,19 +61,27 @@ const componentBookNotReaded = book => {
 let itemBookElement = document.createElement('div');
     itemBookElement.classList.add('item-book');
     itemBookElement.innerHTML =`<div class="book-detail">
-    <h5>${book.name}</h5>
-    <p>${book.genre}</p>
+    <h5>${book.title}</h5>
+    <p class="author">${book.author}</p>
+    <p class="year">${book.year}</p>
     </div>`;
 
 let buttonCheck = document.createElement('button')
 buttonCheck.classList.add('btn-check');
 buttonCheck.addEventListener('click', () => {
-    console.log(book.id);
     checkStorage(book.id);
 });
-itemBookElement.append(buttonCheck);
+let buttonRemove = document.createElement('button')
+    buttonRemove.classList.add('btn-remove');
+    buttonRemove.addEventListener('click', () => {
+        removeStorege(book);
+    });
+let groupButton = document.createElement('div');
+groupButton.append(buttonCheck);
+groupButton.append(buttonRemove);
+itemBookElement.append(groupButton);
 
-    return itemBookElement; 
+return itemBookElement; 
 
 }   
 
@@ -81,8 +89,9 @@ const componentBookReaded = book => {
     let itemBookElement = document.createElement('div');
     itemBookElement.classList.add('item-book');
     itemBookElement.innerHTML =`<div class="book-detail">
-    <h5>${book.name}</h5>
-    <p>${book.genre}</p>
+    <h5>${book.title}</h5>
+    <p class="author">${book.author}</p>
+    <p class="year">${book.year}</p>
     </div>`;
 
     let buttonUndo = document.createElement('button')
@@ -106,8 +115,8 @@ const componentBookReaded = book => {
 
 const renderHTML = () => {
     
-    const notReaded = [...books].filter((item) => !item.isReaded);
-    const readed = [...books].filter((item) => item.isReaded);
+    const notReaded = [...books].filter((item) => !item.isCompleted);
+    const readed = [...books].filter((item) => item.isCompleted);
     const containerNotReaded =  document.querySelector('.not-readed');
     containerNotReaded.innerHTML = '';
     const containerReaded = document.querySelector('.readed');
@@ -143,20 +152,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const buttonSave = document.getElementById('submit');
   buttonSave.addEventListener('click', () => {
-    let name = document.getElementById('name').value;
-    let genre = document.getElementById('genre').value;
-    if(!name){
-        alert("Harap isi nama buku!");
-        event.preventDefault();
-        return;
-    } 
-    if(!genre){
-        alert("Harap isi genre buku!");
-        event.preventDefault();
-        return;
+    let isCompleted, title, author, year;
+    const radioButtons = document.querySelectorAll('input[name="iscompleted"]');
+    for (const radioButton of radioButtons) {
+        if(radioButton.checked) isCompleted = radioButton.value == 'true';
     }
-    addStorege({id: generatedID() ,name, genre, isReaded: false});
+    title = document.getElementById('title').value;
+    author = document.getElementById('author').value;
+    year = parseInt(document.getElementById('year').value);
+
+    if(isCompleted == undefined || !title || !author || !year)return;
     
+    
+    addStorege({id: generatedID() ,title, author, year, isCompleted});
     event.preventDefault();
 });
 

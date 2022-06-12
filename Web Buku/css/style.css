@@ -37,25 +37,31 @@
     color: white;
 }
 
+
+
 .form form {
     padding: 10px;
-    text-align: center;
 }
 
 .form .form-field{
     margin: 10px 0;
 }
 
-.form-field .input-field{
-    width: 70%;
-    height: 40px;
-    padding: 10px;
+.form-field .label-field{
+    width: 25%;
+    display: inline-block;
+    text-align: right;
 }
 
-/* .form-field:nth-of-type(3){
-    display: flex;
-    flex-direction: row-reverse;
-} */
+.form-field .input-field{
+    height: 40px;
+    padding: 10px;
+    width: 60%;
+}
+
+.form-field:nth-of-type(4), .form-field:nth-of-type(5){
+    padding-left: 25%;
+}
 
 .form-field #submit{
     background: lightblue;
@@ -121,6 +127,11 @@
 
 .btn-remove:hover{
     background: url('../assets/images/trash-fill.svg');
+}
+
+.readed .year, .not-readed .year{
+    font-style: italic;
+    font-size: 13px;
 }
 
 .message-notreaded, .message-readed{

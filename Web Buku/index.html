@@ -13,12 +13,22 @@
             <h2>Form Pengisian Data Buku</h2>
             <form>
                 <div class="form-field">
-                    <label for="name" class="label-field">Nama Buku :</label>
-                    <input type="text" id="name" class="input-field" name="name" placeholder="masukkan nama buku...">
+                    <label for="title" class="label-field">Judul Buku :</label>
+                    <input type="text" id="title" class="input-field" name="title" placeholder="masukkan nama buku..." required>
                 </div>
                 <div class="form-field">
-                    <label for="genre" class="label-field">Genre Buku :</label>
-                    <input type="text" id="genre" class="input-field" name="genre" placeholder="masukkan genre buku...">
+                    <label for="author" class="label-field">Penulis :</label>
+                    <input type="text" id="author" class="input-field" name="author" placeholder="masukkan nama penulis buku..." required>
+                </div>
+                <div class="form-field">
+                    <label for="year" class="label-field">Tahun Rilis :</label>
+                    <input type="number" id="year" class="input-field" name="year" placeholder="masukkan tahun rilis buku..." required>
+                </div>
+                <div class="form-field">
+                    <input type="radio" id="true" name="iscompleted" value="true" required>
+                    <label for="true">Sudah Dibaca</label>
+                    <input type="radio" id="false" name="iscompleted" value="false" required>
+                    <label for="false">Belum Dibaca</label>
                 </div>
                 <div class="form-field">
                     <input type="submit" value="Save" name="submit" id="submit" name="submit">
