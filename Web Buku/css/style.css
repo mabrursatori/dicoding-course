@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin: 30px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column.left{
+    flex-basis: 50%;
+}
+
+.column.right{
+    flex-basis: 48%;
+    margin-left: 2%;
+}
+
+.box{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   overflow: hidden;
+   margin-bottom: 30px;
+}
+
+.form h2{
+    background: lightcoral;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+.form form {
+    padding: 10px;
+    text-align: center;
+}
+
+.form .form-field{
+    margin: 10px 0;
+}
+
+.form-field .input-field{
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+}
+
+/* .form-field:nth-of-type(3){
+    display: flex;
+    flex-direction: row-reverse;
+} */
+
+.form-field #submit{
+    background: lightblue;
+    border: 1px lightblue solid ;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+
+.result h3{
+    background: lightcoral;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+}
+.item-book{
+    border: 2px lightgray solid;
+    margin: 10px 50px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.btn-check{
+    background: url('../assets/images/check-outline.svg');
+    background-size: contain;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-check:hover{
+    background: url('../assets/images/check-solid.svg');
+}
+
+.btn-undo{
+    background: url('../assets/images/undo-ouline.svg');
+    background-size: contain;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+
+
+.btn-remove{
+    background: url('../assets/images/trash-outline.svg');
+    background-size: contain;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-remove:hover{
+    background: url('../assets/images/trash-fill.svg');
+}
+
+.message-notreaded, .message-readed{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-hidden{
+    display: none;
+}
+
+
+@media screen and (max-width: 900px){
+    .column.left{
+        flex-basis: 100%;
+    }
+    
+    .column.right{
+        flex-basis: 100%;
+        margin-left: 0;
+    }
+}

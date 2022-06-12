@@ -115,6 +115,11 @@ input[type=text], input[type=date], .btn-submit:focus {
     margin: auto 0;
 }
 
+.item-book{
+    border: 2px black solid;
+    
+}
+
 .check-button {
     width: 40px;
     height: 40px;

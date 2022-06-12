@@ -25,7 +25,7 @@ function loadDataFromStorage() {
  
 function isStorageExist() /* boolean */ {
   if (typeof (Storage) === undefined) {
-    alert('Browser kamu tidak mendukung local storage');
+    alert('Browser kamu tidak mendukung local storage'); 
     return false;
   }
   return true;

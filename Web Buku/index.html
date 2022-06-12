@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Baca Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form box column left">
+            <h2>Form Pengisian Data Buku</h2>
+            <form>
+                <div class="form-field">
+                    <label for="name" class="label-field">Nama Buku :</label>
+                    <input type="text" id="name" class="input-field" name="name" placeholder="masukkan nama buku...">
+                </div>
+                <div class="form-field">
+                    <label for="genre" class="label-field">Genre Buku :</label>
+                    <input type="text" id="genre" class="input-field" name="genre" placeholder="masukkan genre buku...">
+                </div>
+                <div class="form-field">
+                    <input type="submit" value="Save" name="submit" id="submit" name="submit">
+                </div>
+            </form>
+        </div>
+        <div class="column right">
+            <div class="result box">
+                <h3>Buku yang belum dibaca</h3>
+                <div class="not-readed">
+                </div>
+                <div class="message-notreaded">
+                    <p>Belum ada buku</p>
+                </div>
+            </div>
+    
+            <div class="result box">
+                <h3>Buku yang sudah dibaca</h3>
+                <div class="readed"></div>
+                <div class="message-readed">
+                    <p>Belum ada buku</p>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
