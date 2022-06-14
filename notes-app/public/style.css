@@ -10,18 +10,6 @@
 
 .container{
     margin: 30px 30px 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.left{
-    flex-basis: 50%;
-}
-
-.right{
-    flex-basis: 47%;
-    margin-left: 3%;
 }
 
 .card{
@@ -86,8 +74,28 @@ form{
     color: skyblue;
 }
 
-.container-note{
-    padding: 10px;
+.container-colomn{
+    display: flex;
+}
+
+.container-colomn .left{
+    flex-basis: 49%;
+    margin-right: 1%;
+}
+.container-colomn .right{
+    flex-basis: 49%;
+    margin-left: 1%;
+}
+
+.container-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container-note h2{
+    background: lightcoral;
+    color: white;
+    padding: 5px;
 }
 
 .note-item{
@@ -121,14 +129,25 @@ form{
 }
 
 .note-item p{
-    padding: 20px;
+    padding: 0 20px;
+}
+
+.note-item .date{
+    font-style: italic;
+    font-size: 14px;
+    color: gray;
+}
+
+.note-item .body{
     text-align: justify;
+    padding-bottom: 10px;
 }
 
 .empty-message{
     text-align: center;
     height: 50px;
     padding: 20px;
+    grid-column: 1;
 }
 
 @media screen and (max-width: 900px){

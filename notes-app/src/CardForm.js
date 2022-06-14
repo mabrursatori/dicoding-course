@@ -6,11 +6,11 @@ class CardForm extends React.Component{
 
         this.state = {
             title: '',
-            note: ''
+            body: ''
         };
 
         this.onTitleChangeHandler = this.onTitleChangeHandler.bind(this);
-        this.onNoteChangeHandler = this.onNoteChangeHandler.bind(this);
+        this.onBodyChangeHandler = this.onBodyChangeHandler.bind(this);
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
     }
 
@@ -22,16 +22,16 @@ class CardForm extends React.Component{
           });
     }
 
-    onNoteChangeHandler(event){
+    onBodyChangeHandler(event){
         this.setState(() => {
             return {
-              note: event.target.value
+              body: event.target.value
             };
           });
     }
 
     onSubmitHandler(event){
-        this.props.onSave(this.state.title, this.state.note);
+        this.props.onSave(this.state.title, this.state.body);
         
         event.preventDefault();
     }
@@ -39,7 +39,7 @@ class CardForm extends React.Component{
     render(){
 
         return(
-            <div className="container-form card left">
+            <div className="container-form card ">
                 <h1>Form Pembuat Catatan</h1>
                 <form onSubmit={this.onSubmitHandler}>
                 <div className="field-form">
@@ -48,8 +48,8 @@ class CardForm extends React.Component{
                     value={this.state.title} onChange={this.onTitleChangeHandler}/>
                 </div>
                 <div className="field-form">
-                    <label htmlFor="note">Catatan :</label>
-                    <textarea name="note" id="note" cols="30" rows="5" required onChange={this.onNoteChangeHandler} defaultValue={this.state.note}></textarea>
+                    <label htmlFor="body">Catatan :</label>
+                    <textarea name="note" id="body" cols="30" rows="5" required onChange={this.onBodyChangeHandler} defaultValue={this.state.body}></textarea>
                 </div>
                     <button className="btn-save" type="submit">Save</button>
                 </form>

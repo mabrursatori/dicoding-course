@@ -2,11 +2,12 @@ import React from "react";
 import CardForm from "./CardForm";
 import CardNote from "./CardNote";
 import generateID from "./utils/generateID";
+import {getInitialData} from "./utils/index.js";
 
 class App extends React.Component{
     constructor(props){
         super(props);
-        this.state = {data: []};
+        this.state = {data: getInitialData()};
 
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
         this.onAddHandler = this.onAddHandler.bind(this);
@@ -21,10 +22,10 @@ class App extends React.Component{
 
     }
 
-    onAddHandler(title, note){
+    onAddHandler(title, body){
         this.setState((previousState) => {
             return {
-              data: [...previousState.data, {id: generateID(), title, note}]
+              data: [...previousState.data, {id: generateID(), title, body}]
             };
           });
 
@@ -35,7 +36,16 @@ class App extends React.Component{
         return(
             <div className="container">
                 <CardForm onSave={this.onAddHandler}/>
-                <CardNote data={this.state.data} onDelete={this.onDeleteHandler}/>
+                <div className="container-colomn">
+                    <div className="left">
+                    <CardNote data={this.state.data.filter(item => !item.archived)} onDelete={this.onDeleteHandler} title="Catatan Aktif"/>
+                    </div>
+                    <div className="right">
+                    <CardNote data={this.state.data.filter(item => item.archived)} onDelete={this.onDeleteHandler} title="Catatan Arsip"/>
+                    </div>
+                
+                </div>
+                
             </div>
         );
     }
