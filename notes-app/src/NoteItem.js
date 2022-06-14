@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 
-function NoteItem({id, title, description, onDelete}){
+
+function NoteItem({id, title, note, onDelete}){
     return(
         <div className="note-item">
           <div className="note-title">
             <h4>{title}</h4>
-            <button onClick={() => {onDelete(id)}}></button>
+            <button onClick={() => onDelete(id)}></button>
           </div>
-          <p>{description}</p>
+          <p>{note}</p>
         </div>
     );
 }
